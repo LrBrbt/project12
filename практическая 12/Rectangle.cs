@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace практическая_12
 {
@@ -24,8 +27,8 @@ namespace практическая_12
         }
         public Rectangle(int length, int width)
         {
-            _length = length;
-            _width = width;
+                _length = length;
+                _width = width;
         }
 
         public int Perimeter(int length, int width)

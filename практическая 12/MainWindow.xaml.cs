@@ -32,10 +32,17 @@ namespace практическая_12
         {
             if (Int32.TryParse(Length.Text, out int valueLength) && Int32.TryParse(Width.Text, out int valueWidth))
             {
-                rectangle = new(valueLength, valueWidth);
-                ResultPerimeter.Text = (rectangle.Perimeter(valueLength, valueWidth)).ToString();
-                ResultArea.Text = (rectangle.Area(valueLength, valueWidth)).ToString();
-                Length.Focus();
+                if (valueLength < 0 || valueWidth < 0)
+                {
+                    MessageBox.Show("Вы ввели некорректные данные", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {
+                    rectangle = new(valueLength, valueWidth);
+                    ResultPerimeter.Text = (rectangle.Perimeter(valueLength, valueWidth)).ToString();
+                    ResultArea.Text = (rectangle.Area(valueLength, valueWidth)).ToString();
+                    Length.Focus();
+                }
             }
             else
             {
