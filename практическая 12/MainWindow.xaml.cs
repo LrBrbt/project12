@@ -1,18 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
+
 
 namespace практическая_12
 {
@@ -22,13 +13,13 @@ namespace практическая_12
     public partial class MainWindow : Window
     {
         Rectangle rectangle;
+        TextBox lastSelected;
         public MainWindow()
         {
             InitializeComponent();
-            
         }
 
-        private void Start_Click(object sender, RoutedEventArgs e)
+        private void StartRectangle_Click(object sender, RoutedEventArgs e)
         {
             if (Int32.TryParse(Length.Text, out int valueLength) && Int32.TryParse(Width.Text, out int valueWidth))
             {
@@ -55,7 +46,7 @@ namespace практическая_12
             ResultPerimeter.Clear();
             ResultArea.Clear();
             Length.Focus();
-            
+
         }
 
         private void ClearWidth_Click(object sender, RoutedEventArgs e)
@@ -78,6 +69,7 @@ namespace практическая_12
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             Close();
+
         }
 
         private void btnInfo_Click(object sender, RoutedEventArgs e)
@@ -139,5 +131,6 @@ namespace практическая_12
         {
             ToolPanel.Visibility = Visibility.Visible;
         }
+
     }
 }
